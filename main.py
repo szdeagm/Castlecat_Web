@@ -56,7 +56,7 @@ async def main():
             
             # Renderização dos textos
             texto_ganhou = fonte_titulo.render("VOCÊ VENCEU!", True, VERDE)
-            texto_instrucao = fonte_subtitulo.render("Pressione ESPAÇO para reiniciar ou ESC para sair", True, BRANCO)
+            texto_instrucao = fonte_subtitulo.render("Pressione R para reiniciar ou ESC para sair", True, BRANCO)
             
             # Centralizando os textos na tela
             tela.blit(texto_ganhou, (LARGURA // 2 - texto_ganhou.get_width() // 2, ALTURA // 3))
@@ -68,7 +68,7 @@ async def main():
                     quit()
                     sys.exit()
                 if evento.type == KEYDOWN:
-                    if evento.key == K_SPACE:
+                    if evento.key == K_R:
                         executando_win = False  # Sai da tela de vitória e volta ao jogo
                     if evento.key == K_ESCAPE:
                         quit()
@@ -88,7 +88,7 @@ async def main():
             # Renderização dos textos
             texto_ganhou = fonte_titulo.render("VOCÊ PERDEU!", True, VERMELHO)
             texto_placar = fonte_subtitulo.render(f"Seu placar foi {placar}", True, BRANCO)
-            texto_instrucao = fonte_subtitulo.render("Pressione ESPAÇO para reiniciar ou ESC para sair", True, BRANCO)
+            texto_instrucao = fonte_subtitulo.render("Pressione R para reiniciar ou ESC para sair", True, BRANCO)
             
             # Centralizando os textos na tela
             tela.blit(texto_ganhou, (LARGURA // 2 - texto_ganhou.get_width() // 2, ALTURA // 3))
@@ -101,7 +101,7 @@ async def main():
                     quit()
                     sys.exit()
                 if evento.type == KEYDOWN:
-                    if evento.key == K_SPACE:
+                    if evento.key == K_R:
                         executando_derrota = False  # Sai da tela de derrota e volta ao jogo
                     if evento.key == K_ESCAPE:
                         quit()
