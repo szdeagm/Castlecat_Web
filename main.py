@@ -68,7 +68,7 @@ async def main():
                     quit()
                     sys.exit()
                 if evento.type == KEYDOWN:
-                    if evento.key == K_R:
+                    if evento.key == K_r:
                         executando_win = False  # Sai da tela de vitória e volta ao jogo
                     if evento.key == K_ESCAPE:
                         quit()
@@ -101,7 +101,7 @@ async def main():
                     quit()
                     sys.exit()
                 if evento.type == KEYDOWN:
-                    if evento.key == K_R:
+                    if evento.key == K_r:
                         executando_derrota = False  # Sai da tela de derrota e volta ao jogo
                     if evento.key == K_ESCAPE:
                         quit()
