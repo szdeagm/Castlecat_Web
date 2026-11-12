@@ -111,6 +111,30 @@ async def main():
             fps.tick(60)
             await asyncio.sleep(0) 
 
+    async def exibir_instruções():
+        """Loop exclusivo para a tela de instruções."""
+        executando_instruções = True
+
+        while executando_instruções:
+            instrucoes = image.load("imagens/instrucoes.png")
+            instrucoes = transform.scale(instrucoes, (600, 600))
+            tela.blit(instrucoes, (0, 0))
+            # Captura de eventos na tela de instruções
+            for evento in event.get():
+                if evento.type == QUIT:
+                    quit()
+                    sys.exit()
+                if evento.type == KEYDOWN:
+                    if evento.key == K_w or evento.key == K_SPACE or evento.key == K_a or evento.key == K_s or evento.key == K_d:
+                        executando_instruções = False  # Sai da tela de instruções e volta ao jogo
+                    if evento.key == K_ESCAPE:
+                        quit()
+                        sys.exit()
+                        
+            display.flip()
+            fps.tick(60)
+            await asyncio.sleep(0) 
+
 
     while rodando:
         fps.tick(60)
