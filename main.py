@@ -116,7 +116,7 @@ async def main():
         executando_instruções = True
 
         while executando_instruções:
-            instrucoes = image.load("imagens/instrucoes.png")
+            instrucoes = image.load("imagens/instrucoes.jpeg")
             instrucoes = transform.scale(instrucoes, (600, 600))
             tela.blit(instrucoes, (0, 0))
             # Captura de eventos na tela de instruções
@@ -135,6 +135,8 @@ async def main():
             fps.tick(60)
             await asyncio.sleep(0) 
 
+
+    await exibir_instruções()  # Exibe a tela de instruções antes do loop principal
 
     while rodando:
         fps.tick(60)
